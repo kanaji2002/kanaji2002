@@ -1,0 +1,85 @@
+name: Qiita-Likes-Graph
+
+on:
+  schedule:
+    - cron: "0 18 * * *"  # 毎日18:00 UTCに実行
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        env:
+          ACTIONS_NODE: '16'  # Nodeのバージョンを指定
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+        env:
+          ACTIONS_NODE: '16'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests pandas matplotlib
+      
+      - name: Run script to generate graph
+        env:
+          ACCESS_TOKEN: ${{ secrets.QIITA_ACCESS_TOKEN }}
+        run: |
+          python <<EOF
+          import os
+          import requests
+          import pandas as pd
+          import matplotlib.pyplot as plt
+          from datetime import datetime
+
+          access_token = os.getenv('ACCESS_TOKEN')
+          user_id = 'kanaji2002'
+          start_date = '2024-11-01'
+          end_date = '2024-11-30'
+          url = f'https://qiita.com/api/v2/users/{user_id}/items'
+          headers = {'Authorization': f'Bearer {access_token}'}
+          likes_data = []
+          page = 1
+          while True:
+              response = requests.get(f'{url}?page={page}&per_page=100', headers=headers)
+              if response.status_code != 200:
+                  print("Error fetching data from Qiita API:", response.status_code)
+                  break
+              items = response.json()
+              for item in items:
+                  created_at = datetime.strptime(item['created_at'], '%Y-%m-%dT%H:%M:%S%z').date()
+                  likes_count = item['likes_count']
+                  likes_data.append({'date': created_at, 'likes_count': likes_count})
+              if len(items) < 100:
+                  break
+              page += 1
+
+          df = pd.DataFrame(likes_data)
+          df['date'] = pd.to_datetime(df['date'])
+          daily_likes = df.groupby('date')['likes_count'].sum().cumsum()
+          plt.figure(figsize=(10, 5))
+          plt.plot(daily_likes.index, daily_likes.values,
+                   color='black', linewidth=2.5, linestyle='-', marker='o',
+                   markersize=6, markerfacecolor='orange', markeredgecolor='red', alpha=0.8)
+          plt.xlabel("Date")
+          plt.ylabel("Total Likes")
+          plt.title(f"Number of good likes of {user_id}")
+          plt.xticks(rotation=45)
+          plt.grid()
+          plt.tight_layout()
+          plt.savefig("output.png")
+          EOF
+      
+      - name: Commit & Push output
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add output.png
+          git commit -m "Add generated graph for Qiita likes"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
