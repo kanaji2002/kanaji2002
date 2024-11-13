@@ -38,8 +38,6 @@ jobs:
 
           access_token = os.getenv('ACCESS_TOKEN')
           user_id = 'kanaji2002'
-          start_date = '2024-11-01'
-          end_date = '2024-11-30'
           url = f'https://qiita.com/api/v2/users/{user_id}/items'
           headers = {'Authorization': f'Bearer {access_token}'}
           likes_data = []
@@ -60,6 +58,9 @@ jobs:
 
           df = pd.DataFrame(likes_data)
           df['date'] = pd.to_datetime(df['date'])
+          start_date = df['date'].min()
+          end_date = df['date'].max()
+
           daily_likes = df.groupby('date')['likes_count'].sum().cumsum()
           plt.figure(figsize=(10, 5))
           plt.plot(daily_likes.index, daily_likes.values,
