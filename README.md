@@ -4,3 +4,6 @@
 
 ## Qiitaのいいね数の推移
 ![Qiita Likes Graph](./output.png)
+
+
+[Qiitaプロフィール]([https://github.com/kanaji2002](https://qiita.com/kanaji2002)
