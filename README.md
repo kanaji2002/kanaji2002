@@ -6,4 +6,4 @@
 ![Qiita Likes Graph](./output.png)
 
 
-[Qiitaプロフィール](https://qiita.com/kanaji2002)で詳細な履歴をご確認いただけます。
+kanaji2002の[Qiitaプロフィール](https://qiita.com/kanaji2002)
