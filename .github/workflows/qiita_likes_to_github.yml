@@ -83,4 +83,4 @@ jobs:
           git commit -m "Add generated graph for Qiita likes"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GitHubForQIITA_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
