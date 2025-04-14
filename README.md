@@ -6,4 +6,4 @@
 ![Qiita Likes Graph](output.png)
 
 
-## kanaji2002の[Qiitaプロフィール](https://qiita.com/kanaji2002)
+###  私のQiitaは[こちら](https://qiita.com/kanaji2002)
