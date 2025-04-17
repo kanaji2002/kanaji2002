@@ -1,9 +1,9 @@
-## GitHubのコミット履歴
+## My commit log
 ![](./profile-3d-contrib/profile-green-animate.svg)
 
 
-## Qiitaのいいね数の推移
+## Qiita likes
 ![Qiita Likes Graph](output.png)
 
 
-###  私のQiitaは[こちら](https://qiita.com/kanaji2002)
+###  My Qiita is [here](https://qiita.com/kanaji2002)
