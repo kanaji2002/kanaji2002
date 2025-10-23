@@ -29,15 +29,20 @@ def fetch_langs(url):
     r.raise_for_status()
     return r.json()
 
+EXCLUDE = {"PostScript", "TeX", "Makefile", "Jupyter Notebook"}  # 好みで追加OK
+
 def aggregate_languages(user):
     total = {}
     for repo in fetch_all_repos(user):
-        if repo.get("fork"):  # フォークは除外（必要なら消す）
+        if repo.get("fork"):
             continue
         langs = fetch_langs(repo["languages_url"])
         for name, bytes_ in langs.items():
+            if name in EXCLUDE:
+                continue
             total[name] = total.get(name, 0) + bytes_
     return total
+
 
 def make_donut(data, out="assets/lang_donut.png", top_n=5):
     os.makedirs(os.path.dirname(out), exist_ok=True)
