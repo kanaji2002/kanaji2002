@@ -1,4 +1,4 @@
-
+n
 # My commit log
  ![](./profile-3d-contrib/profile-green-animate.svg)
 
@@ -20,7 +20,7 @@
 ---
 
 ## 🧰 Tools & DevOps
-![](https://skillicons.dev/icons?i=git,github,githubactions,bitbucket,docker,vercel,selenium,raspberrypi,unity,vscode,anaconda,linux,arduino,figma,blender)
+![](https://skillicons.dev/icons?i=git,github,githubactions,docker,kubernetes,vercel,selenium,raspberrypi,unity,vscode,anaconda,linux,arduino,figma,blender)
 
 
 
