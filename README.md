@@ -63,18 +63,25 @@ Currently, I’m analyzing **software dependencies** and studying how to improve
 
 ## 📊 GitHub Stats
 
-<div align="center">
 
- <a href="https://github.com/anuraghazra/github-readme-stats">
-<img src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light&include_all_commits=true&hide_rank=false&card_width=500" />
+<div align="center" style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+
+
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img
+      src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light&include_all_commits=true&count_private=true&card_width=450"
+      alt="GitHub Stats"
+      width="620"
+    />
   </a>
 
-
-
-
-  <!-- 右：Actionsが生成する画像（後述のワークフローで出力） -->
+  <!-- 右：言語ドーナツ -->
   <a href="https://github.com/kanaji2002/kanaji2002">
-    <img src="assets/lang_donut.png" alt="Top Languages (Donut)" height="240px" />
+    <img
+      src="https://raw.githubusercontent.com/kanaji2002/kanaji2002/main/assets/lang_donut.png?update=20251024"
+      alt="Top Languages (Donut)"
+      width="315"
+    />
   </a>
 
 </div>
