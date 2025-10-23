@@ -9,7 +9,7 @@
 ---
 
 ## ⚙️ Backend / ML
-![](https://skillicons.dev/icons?i=python,java,cpp,c,cs,kotlin,fastapi,nodejs,flask,tensorflow,pytorch,sklearn)
+![](https://skillicons.dev/icons?i=python,cpp,c,kotlin,fastapi,tensorflow,pytorch,sklearn)
 
 ---
 
