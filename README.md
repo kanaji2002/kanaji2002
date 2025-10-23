@@ -1,15 +1,27 @@
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kanaji2002&theme=gruvbox_light&layout=default)](https://github.com/anuraghazra/github-readme-stats)
-
 
 # My commit log
-![](./profile-3d-contrib/profile-green-animate.svg)
+ ![](./profile-3d-contrib/profile-green-animate.svg)
 
+## 📊 GitHub Stats
 
+## 🖥️ Frontend
+![](https://skillicons.dev/icons?i=html,css,js,ts,vue,svelte,bootstrap,threejs)
 
+---
 
-# Qiita likes ❤️‍🔥
-##  My Qiita article is [HERE](https://qiita.com/kanaji2002)
-![Qiita Likes Graph](output.png)
+## ⚙️ Backend / ML
+![](https://skillicons.dev/icons?i=python,java,cpp,c,cs,kotlin,fastapi,nodejs,flask,tensorflow,pytorch,sklearn)
+
+---
+
+## 🗄️ Databases / Cloud
+![](https://skillicons.dev/icons?i=firebase,supabase,aws,sqlite,postgresql)
+
+---
+
+## 🧰 Tools & DevOps
+![](https://skillicons.dev/icons?i=git,github,githubactions,bitbucket,docker,vercel,selenium,raspberrypi,unity,vscode,anaconda,linux,arduino,figma,blender)
+
 
 
 
