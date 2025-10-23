@@ -89,12 +89,13 @@ def make_donut(data, out="assets/lang_donut.png", top_n=7):
     ax.legend(
         wedges, labels, title="Languages",
         loc="center left", bbox_to_anchor=(1, 0.5),
-        frameon=False
+        frameon=False,
+        fontsize=16,          
     )
 
 
     ax.set(aspect="equal")
-    ax.set_title(f"{USER}'s Top Languages", pad=25, fontsize=13, fontweight="bold", color="#073642")
+    ax.set_title(f"{USER}'s Top Languages", pad=25, fontsize=26, fontweight="bold", color="#6195d1")
     plt.tight_layout()
 
 
