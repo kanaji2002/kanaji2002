@@ -71,7 +71,7 @@ Currently, I’m analyzing **software dependencies** and studying how to improve
     <img
       src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light&include_all_commits=true&count_private=true&card_width=450"
       alt="GitHub Stats"
-      width="620"
+      width="600"
     />
   </a>
 
@@ -80,7 +80,7 @@ Currently, I’m analyzing **software dependencies** and studying how to improve
     <img
       src="https://raw.githubusercontent.com/kanaji2002/kanaji2002/main/assets/lang_donut.png?update=20251024"
       alt="Top Languages (Donut)"
-      width="315"
+      width="300"
     />
   </a>
 
