@@ -75,7 +75,6 @@ def make_donut(data, out="assets/lang_donut.png", top_n=5):
     plt.style.use("default")
     fig, ax = plt.subplots(figsize=(4.6, 4.6), dpi=200, facecolor="#fdf6e3")
     wedges, _ = ax.pie(
-    wedges, _ = ax.pie(
     sizes,
     colors=SOLARIZED_LIGHT[:len(sizes)],
     wedgeprops=dict(width=0.38, edgecolor="#fdf6e3"),
