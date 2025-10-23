@@ -69,20 +69,13 @@ Currently, I’m analyzing **software dependencies** and studying how to improve
 
   <a href="https://github.com/anuraghazra/github-readme-stats">
     <img
-      src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light&include_all_commits=true&count_private=true&card_width=450"
+      src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light&include_all_commits=true&count_private=true&card_width=650"
       alt="GitHub Stats"
-      width="500"
+      width="800"
     />
   </a>
 
-  <!-- 右：言語ドーナツ -->
-  <a href="https://github.com/kanaji2002/kanaji2002">
-    <img
-      src="https://raw.githubusercontent.com/kanaji2002/kanaji2002/main/assets/lang_donut.png?update=20251024"
-      alt="Top Languages (Donut)"
-      width="250"
-    />
-  </a>
+
 
 </div>
 
