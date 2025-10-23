@@ -1,16 +1,32 @@
 #!/usr/bin/env python3
-import os, math, requests
+import os, requests
 import matplotlib
 matplotlib.use("Agg")  # GUI不要
 import matplotlib.pyplot as plt
 
+# 🌞 Solarized-light カラーパレット
+SOLARIZED_LIGHT = [
+    "#268bd2",  # blue
+    "#2aa198",  # cyan
+    "#859900",  # green
+    "#b58900",  # yellow
+    "#cb4b16",  # orange
+    "#d33682",  # magenta
+    "#6c71c4",  # violet
+    "#eee8d5",  # base2 (背景)
+    "#93a1a1",  # base1
+    "#073642"   # base03 (枠線)
+]
+
 USER = os.getenv("GH_USERNAME", "kanaji2002")
-TOKEN = os.getenv("GITHUB_TOKEN")  # ActionsのGITHUB_TOKENでOK
+TOKEN = os.getenv("GITHUB_TOKEN")
 HEADERS = {"Authorization": f"token {TOKEN}"} if TOKEN else {}
 
+EXCLUDE = {"PostScript", "TeX", "Jupyter Notebook", "Makefile", "HTML"}  # 必要に応じて追加
+
+
 def fetch_all_repos(user):
-    repos = []
-    page = 1
+    repos, page = [], 1
     while True:
         r = requests.get(
             f"https://api.github.com/users/{user}/repos",
@@ -29,8 +45,6 @@ def fetch_langs(url):
     r.raise_for_status()
     return r.json()
 
-EXCLUDE = {"PostScript", "TeX", "Makefile", "Jupyter Notebook"}  # 好みで追加OK
-
 def aggregate_languages(user):
     total = {}
     for repo in fetch_all_repos(user):
@@ -43,14 +57,11 @@ def aggregate_languages(user):
             total[name] = total.get(name, 0) + bytes_
     return total
 
-
 def make_donut(data, out="assets/lang_donut.png", top_n=5):
     os.makedirs(os.path.dirname(out), exist_ok=True)
     if not data:
-        # 空でも落ちないように
         data = {"Other": 1}
 
-    # 上位N + Other に集約
     items = sorted(data.items(), key=lambda x: x[1], reverse=True)
     head = items[:top_n]
     tail_sum = sum(v for _, v in items[top_n:])
@@ -60,14 +71,9 @@ def make_donut(data, out="assets/lang_donut.png", top_n=5):
     labels = [k for k, _ in head]
     sizes = [v for _, v in head]
 
-    fig, ax = plt.subplots(figsize=(4.6, 4.6), dpi=200)
-    wedges, texts = ax.pie(sizes, wedgeprops=dict(width=0.38), startangle=90)
-    ax.legend(wedges, labels, title="Languages", loc="center left", bbox_to_anchor=(1, 0.5))
-    ax.set(aspect="equal", title=f"{USER}'s Top Languages")
-    plt.tight_layout()
-    fig.savefig(out, bbox_inches="tight", pad_inches=0.1)
-    plt.close(fig)
-
-if __name__ == "__main__":
-    data = aggregate_languages(USER)
-    make_donut(data)
+    # 🌞 Solarized-light っぽい設定
+    plt.style.use("default")
+    fig, ax = plt.subplots(figsize=(4.6, 4.6), dpi=200, facecolor="#fdf6e3")
+    wedges, _ = ax.pie(
+        sizes,
+        colors=SOLARIZED_LIGHT[:len(sizes)]()_
