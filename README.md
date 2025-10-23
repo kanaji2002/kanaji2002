@@ -67,7 +67,7 @@ Currently, I’m analyzing **software dependencies** and studying how to improve
 
   <!-- 左：Stats カード -->
   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light" height="250px" />
+    <img src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light" height="300px" />
   </a>
 
   <!-- 右：Actionsが生成する画像（後述のワークフローで出力） -->
