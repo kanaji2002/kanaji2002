@@ -65,14 +65,17 @@ Currently, I’m analyzing **software dependencies** and studying how to improve
 
 <div align="center">
 
-  <!-- 左：Stats カード -->
-  <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light" height="300px" />
+ <a href="https://github.com/anuraghazra/github-readme-stats">
+<img src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light&include_all_commits=true&hide_rank=false&card_width=500" />
   </a>
+
+
+
 
   <!-- 右：Actionsが生成する画像（後述のワークフローで出力） -->
   <a href="https://github.com/kanaji2002/kanaji2002">
-    <img src="assets/lang_donut.png" alt="Top Languages (Donut)" height="250px" />
+    <img src="assets/lang_donut.png" alt="Top Languages (Donut)" height="240px" />
   </a>
 
 </div>
+
