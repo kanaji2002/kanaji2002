@@ -92,8 +92,11 @@ def make_donut(data, out="assets/lang_donut.png", top_n=5):
         frameon=False
     )
 
-    ax.set(aspect="equal", title=f"{USER}'s Top Languages", titlepad=20)
+
+    ax.set(aspect="equal")
+    ax.set_title(f"{USER}'s Top Languages", pad=20)
     plt.tight_layout()
+
 
     # ✅ 出力と確認ログ
     fig.savefig(out, bbox_inches="tight", pad_inches=0.1, facecolor="#fdf6e3")
