@@ -2,12 +2,8 @@ name: Generate Language Donut
 
 on:
   schedule:
-    # UTC 21:00 → JST 6:00
-    - cron: "0 21 * * *"
-  workflow_dispatch:  # 手動でも実行できる
-  push:
-    paths:
-      - "scripts/make_lang_chart.py"
+    - cron: "0 21 * * *"    # JST 06:00
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,12 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Install dependencies
+      - name: Install deps
         run: |
           python -m pip install --upgrade pip
           pip install matplotlib requests
@@ -31,10 +29,20 @@ jobs:
         env:
           GH_USERNAME: kanaji2002
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/make_lang_chart.py
+        run: |
+          mkdir -p assets
+          python scripts/make_lang_chart.py
+          echo "== ls after generate =="
+          ls -alh assets || true
+
+      - name: Fail if image missing
+        run: |
+          test -f assets/lang_donut.png || (echo "❌ assets/lang_donut.png not found" && exit 1)
 
       - name: Commit artifact
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update lang donut (daily)"
+          commit_message: "chore: update lang donut"
           file_pattern: assets/lang_donut.png
+          add_options: "-A"
+          push_options: "--force-with-lease"
