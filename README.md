@@ -1,8 +1,10 @@
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kanaji2002&theme=gruvbox_light&layout=default)](https://github.com/anuraghazra/github-readme-stats)
+
+
 # My commit log
 ![](./profile-3d-contrib/profile-green-animate.svg)
 
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kanaji2002&theme=gruvbox_light&layout=default)](https://github.com/anuraghazra/github-readme-stats)
 
 
 # Qiita likes ❤️‍🔥
