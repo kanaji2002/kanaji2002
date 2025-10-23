@@ -67,12 +67,12 @@ Currently, I’m analyzing **software dependencies** and studying how to improve
 
   <!-- 左：Stats カード -->
   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light" height="180px" />
+    <img src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light" height="250px" />
   </a>
 
   <!-- 右：Actionsが生成する画像（後述のワークフローで出力） -->
   <a href="https://github.com/kanaji2002/kanaji2002">
-    <img src="assets/lang_donut.png" alt="Top Languages (Donut)" height="180px" />
+    <img src="assets/lang_donut.png" alt="Top Languages (Donut)" height="250px" />
   </a>
 
 </div>
