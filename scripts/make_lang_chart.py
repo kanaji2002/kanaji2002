@@ -35,15 +35,18 @@ def fetch_all_repos(user):
         )
         r.raise_for_status()
         batch = r.json()
-        if not batch: break
+        if not batch:
+            break
         repos += batch
         page += 1
     return repos
+
 
 def fetch_langs(url):
     r = requests.get(url, headers=HEADERS, timeout=30)
     r.raise_for_status()
     return r.json()
+
 
 def aggregate_languages(user):
     total = {}
@@ -56,6 +59,7 @@ def aggregate_languages(user):
                 continue
             total[name] = total.get(name, 0) + bytes_
     return total
+
 
 def make_donut(data, out="assets/lang_donut.png", top_n=5):
     os.makedirs(os.path.dirname(out), exist_ok=True)
@@ -74,10 +78,31 @@ def make_donut(data, out="assets/lang_donut.png", top_n=5):
     # 🌞 Solarized-light っぽい設定
     plt.style.use("default")
     fig, ax = plt.subplots(figsize=(4.6, 4.6), dpi=200, facecolor="#fdf6e3")
-    wedges, _ = ax.pie(
-    sizes,
-    colors=SOLARIZED_LIGHT[:len(sizes)],
-    wedgeprops=dict(width=0.38, edgecolor="#fdf6e3"),
-    startangle=90
-)
 
+    wedges, _ = ax.pie(
+        sizes,
+        colors=SOLARIZED_LIGHT[:len(sizes)],
+        wedgeprops=dict(width=0.38, edgecolor="#fdf6e3"),
+        startangle=90
+    )
+
+    ax.legend(
+        wedges, labels, title="Languages",
+        loc="center left", bbox_to_anchor=(1, 0.5),
+        frameon=False
+    )
+
+    ax.set(aspect="equal", title=f"{USER}'s Top Languages", titlepad=20)
+    plt.tight_layout()
+
+    # ✅ 出力と確認ログ
+    fig.savefig(out, bbox_inches="tight", pad_inches=0.1, facecolor="#fdf6e3")
+    print(f"✅ Saved donut chart: {os.path.abspath(out)}")
+
+    plt.close(fig)
+
+
+if __name__ == "__main__":
+    data = aggregate_languages(USER)
+    print(f"📊 Collected {len(data)} languages: {list(data.keys())[:5]} ...")
+    make_donut(data)
