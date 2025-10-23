@@ -5,7 +5,7 @@ n
 ## 📊 GitHub Stats
 
 ## 🖥️ Frontend
-![](https://skillicons.dev/icons?i=html,css,js,ts,vue,svelte,bootstrap,threejs)
+![](https://skillicons.dev/icons?i=html,css,js,go,svelte,bootstrap,threejs)
 
 ---
 
