@@ -61,7 +61,7 @@ def aggregate_languages(user):
     return total
 
 
-def make_donut(data, out="assets/lang_donut.png", top_n=5):
+def make_donut(data, out="assets/lang_donut.png", top_n=7):
     os.makedirs(os.path.dirname(out), exist_ok=True)
     if not data:
         data = {"Other": 1}
@@ -77,7 +77,7 @@ def make_donut(data, out="assets/lang_donut.png", top_n=5):
 
     # 🌞 Solarized-light っぽい設定
     plt.style.use("default")
-    fig, ax = plt.subplots(figsize=(4.6, 4.6), dpi=200, facecolor="#fdf6e3")
+    fig, ax = plt.subplots(figsize=(6, 6), dpi=250, facecolor="#fdf6e3")
 
     wedges, _ = ax.pie(
         sizes,
@@ -94,7 +94,7 @@ def make_donut(data, out="assets/lang_donut.png", top_n=5):
 
 
     ax.set(aspect="equal")
-    ax.set_title(f"{USER}'s Top Languages", pad=20)
+    ax.set_title(f"{USER}'s Top Languages", pad=25, fontsize=13, fontweight="bold", color="#073642")
     plt.tight_layout()
 
 
