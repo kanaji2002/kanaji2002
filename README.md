@@ -64,10 +64,9 @@ Currently, I’m analyzing **software dependencies** and studying how to improve
 ## 📊 GitHub Stats
 
 
-<div align="center" style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+<!-- <div align="center" style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
 
 
- 
   <a href="https://github.com/anuraghazra/github-readme-stats">
       <img src="https://github-readme-stats.vercel.app/api?username=kanaji2002&show_icons=true&theme=solarized-light&count_private=true&card_width=650" 
        alt="GitHub Stats"
@@ -75,5 +74,5 @@ Currently, I’m analyzing **software dependencies** and studying how to improve
   </a>
 
 
-</div>
+</div> -->
 
